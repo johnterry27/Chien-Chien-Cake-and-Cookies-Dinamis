@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Produk</title>
+  </head>
+  <body>
+    <h1>Produk</h1>
+    <a href="/add" class="tambah">+ Tambah Produk</a>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Gambar</th>
+            <th>Nama Produk</th>
+            <th>Harga</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% products.forEach((product, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td>
+              <img
+                src="/uploads/<%= product.image %>"
+                alt="<%= product.name %>"
+              />
+            </td>
+            <td><%= product.name %></td>
+            <td>IDR <%= product.price %>K</td>
+            <td>
+              <span class="action_btn">
+                <a href="/edit/<%= product.id %>">Edit</a>
+                <form
+                  action="/delete/<%= product.id %>"
+                  method="post"
+                  style="display: inline"
+                >
+                  <button type="submit">Hapus</button>
+                </form>
+              </span>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

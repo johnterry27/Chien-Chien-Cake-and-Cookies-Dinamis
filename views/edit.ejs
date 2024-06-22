@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Edit Produk</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="editForm">
+        <h2>Edit Produk</h2>
+        <form
+          action="/edit/<%= product.id %>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="field">
+            <label for="name">Nama Produk</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nama Produk"
+              value="<%= product.name %>"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="price">Harga</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Harga"
+              value="<%= product.price %>"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="image">Gambar</label>
+            <input type="file" id="image" name="image" />
+          </div>
+          <button type="submit" class="btn">Edit Produk</button>
+        </form>
+        <a href="/crud" class="back-link">Kembali ke Daftar Produk</a>
+      </div>
+    </div>
+  </body>
+</html>
