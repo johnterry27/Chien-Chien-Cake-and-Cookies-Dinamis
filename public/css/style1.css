@@ -304,9 +304,6 @@ footer .created a {
   font-weight: 700;
 }
 
-/* Media Queries */
-
-/* Lap Top */
 @media (max-width: 1366px) {
   html {
     font-size: 75%;
