@@ -73,6 +73,15 @@ body {
 
 .navbar-extra a {
   color: #483d3f;
+  padding: 0.5rem 1rem;
+  border: 1px solid #483d3f;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-extra a:hover {
+  background-color: #483d3f;
+  color: #fff;
 }
 
 #menu1 {
